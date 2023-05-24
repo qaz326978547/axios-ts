@@ -1,16 +1,18 @@
-import axios, { AxiosRequestConfig, AxiosResponse, Method } from 'axios';
+import axios, { type AxiosInstance, type AxiosRequestConfig, type AxiosResponse } from 'axios';
 import { AppEvents, appEmitter } from './modules/event';
+import type { Method } from 'axios';
 
-export const apiBaseUrl = `https://type-script-demo.vercel.app`;
+export const apiBaseUrl = `https://type-script-demo.vercel.app/`;
 
 const ajax = axios.create({
   baseURL: apiBaseUrl,
-  timeout: 1000,
+  timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
     'X-Requested-With': 'XMLHttpRequest'
   }
 });
+
 export async function $http<T = any>(method: Method, url: string, ...payload: any[]): Promise<T> {
   const requestData: AxiosRequestConfig = { url, method };
 
@@ -32,7 +34,7 @@ export async function $http<T = any>(method: Method, url: string, ...payload: an
   }
 }
 
-export function isNetworkError(err) {
+export function isNetworkError(err: { isAxiosError: any; response: any }) {
   return !!err.isAxiosError && !err.response;
 }
 

@@ -4,8 +4,9 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <div style="margin-bottom: 50px;">
-    <router-link to="/" style="padding: 20px;">home</router-link>
-    <router-link to="/about">about</router-link>
+    <router-link to="/">home</router-link>
+    <router-link to="/about" style="padding: 20px;">about</router-link>
+    <router-link to="/test1">/test1</router-link>
   </div>
 
 
