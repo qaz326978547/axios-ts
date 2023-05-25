@@ -9,7 +9,7 @@ export namespace TodoApi {
 
   export async function fetchTodoList(data?: { content?: string }): Promise<TodoList[] | null> {
     const [err, res] = await asyncDo($http<TodoList[]>('get', '/todoList', data));
-    if (!isResponseOK(err, res)) {
+    if (!isResponseOK(err, res, true)) {
       console.log(res);
       return null;
     }
@@ -21,8 +21,10 @@ export namespace TodoApi {
     }
   }
 
-  export async function addTodoItem(data: { isCompleted: boolean; content: string }) {
+  export async function addTodoItem(data?: TodoList) {
     const [err, result] = await asyncDo($http<{ data: TodoList }>('post', '/todolist', data));
+    console.log('result', [err, result]);
+
     if (!isResponseOK(err, result)) {
       return null;
     }

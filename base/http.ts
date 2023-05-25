@@ -13,12 +13,16 @@ const ajax = axios.create({
   }
 });
 
-export async function $http<T = any>(method: Method, url: string, ...payload: any[]): Promise<T> {
+export async function $http<T>(method: Method, url: string, ...payload: any[]): Promise<T> {
   const requestData: AxiosRequestConfig = { url, method };
 
   if (method == 'get' || method == 'GET') {
+    console.log('true', payload);
     requestData.params = payload[0];
   } else {
+    console.log('else 0', payload[0]);
+    console.log('else 1', payload[1]);
+
     requestData.data = payload[0];
     requestData.params = payload[1];
   }

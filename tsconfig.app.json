@@ -1,6 +1,6 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["./**/*.ts,env.d.ts","node_modules/axios/index.d.ts", "src/**/*", "src/**/*.vue","base/**/*.ts","base/**/*.vue","src/**/*.ts"],
+  "include": ["src/views/Home/*.ts","./**/*.ts","./axios/*.ts","env.d.ts","node_modules/axios/index.d.ts", "src/**/*", "src/**/*.vue","base/**/*.ts","base/**/*.vue","src/**/*.ts"],
   "exclude": ["src/**/__tests__/*", "node_modules"],
   "compilerOptions": {
     "module": "esnext",

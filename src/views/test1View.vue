@@ -77,7 +77,7 @@ async function addTodoItem() {
         isCompleted: isCompleted.value,
         content: content.value
     }
-    const res = await TodoApi.addTodoItem(data);
+    const res = await TodoApi.addTodoItem({ isCompleted: isCompleted.value, content: content.value });
     if (res) {
         console.log('成功新增', res);
 

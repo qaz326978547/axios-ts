@@ -12,6 +12,6 @@ export namespace Api {
     if (!isResponseOK(err, result)) {
       return null;
     }
-    return result.data;
+    return result;
   }
 }
