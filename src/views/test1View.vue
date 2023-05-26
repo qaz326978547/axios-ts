@@ -1,24 +1,27 @@
 <template>
     <div>
-        <button @click="fetchData">reload</button>
+        <button class="btn btn-outline-primary" @click="fetchData">reload</button>
         <div v-if="loading">
             loading......
         </div>
         <template v-else>
-            <div v-for="list in todoListData" :key="list.id">
+            <div class="mt-5" v-for="list in todoListData" :key="list.id">
                 <ul style="display: flex;">
                     <li> {{ list.content }}</li>
                     <li style="margin-left: 10px;">
                         <input type="checkbox" :checked="list.isCompleted" disabled>
                     </li>
                     <li>
-                        <button @click="removeTodoItem(list.id)">刪除</button>
+                        <button class="ms-3 btn  btn-outline-danger" @click="removeTodoItem(list.id)">刪除</button>
+                    </li>
+                    <li>
+                        <TodoListModal :detail="list" />
                     </li>
                 </ul>
 
             </div>
         </template>
-
+        <!-- 新增 -->
         <br>
         <hr>
         <br>
@@ -39,11 +42,16 @@
 ul>li {
     list-style: none;
 }
+
+label,
+input {
+    display: block;
+}
 </style>
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { TodoApi } from '../../axios/todolistAPI'
-import { $http } from '../../base/http'
+import TodoListModal from '@/components/TodoListModal.vue';
 
 
 interface TodoList {

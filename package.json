@@ -12,10 +12,14 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@iconify/vue": "^4.1.1",
+    "bootstrap": "^5.2.3",
     "eventemitter3": "^5.0.1",
     "pinia": "^2.0.36",
     "tiny-typed-emitter": "^2.1.0",
     "vue": "^3.3.2",
+    "vue-element-loading": "^3.0.1",
+    "vue-final-modal": "^4.4.2",
     "vue-router": "^4.2.0"
   },
   "devDependencies": {

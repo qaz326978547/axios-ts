@@ -1,6 +1,3 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-</script>
 
 <template>
   <div style="margin-bottom: 50px;">
@@ -8,18 +5,28 @@ import { RouterLink, RouterView } from 'vue-router'
     <router-link to="/about" style="padding: 20px;">about</router-link>
     <router-link to="/test1">/test1</router-link>
   </div>
-
-
   <div style="padding: 0 10%;">
     <RouterView />
   </div>
+  <ModalsContainer />
 </template>
 
-<style scoped>
+<script setup lang="ts">
+
+import { ModalsContainer } from 'vue-final-modal'
+import { RouterLink, RouterView } from 'vue-router'
+</script>
+
+
+
+<style>
 header {
   line-height: 1.5;
   max-height: 100vh;
 }
+
+
+
 
 .logo {
   display: block;
