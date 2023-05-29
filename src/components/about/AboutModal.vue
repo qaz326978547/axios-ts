@@ -33,7 +33,11 @@ import type { TodoList } from '@/views/About/types'
 const todoListData = ref<TodoList[]>([])
 
 async function getTodoList() {
-
+    //todolistApi.ts 
+    // export async function getTodoList(): Promise<TodoList[] | null> {
+    // const res = await asyncData(() => $http<TodoList[]>('get', '/todolist'));
+    // return res?.data ?? null;
+    //這邊要注意.value = res 型別錯誤 根據Promise<TodoList[] | null> 及 $http<TodoList[]>
     const res = await TodoListApi.getTodoList()
     if (res) {
         todoListData.value = res

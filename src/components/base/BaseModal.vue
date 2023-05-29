@@ -14,6 +14,9 @@
 <script setup lang="ts">
 import { VueFinalModal } from 'vue-final-modal'
 import { ref } from 'vue'
+defineProps<{
+    isLoading?: boolean
+}>()
 
 const emit = defineEmits<{
     (e: 'update:modelValue', modelValue: boolean): void
@@ -25,7 +28,6 @@ const emit = defineEmits<{
 
 <style>
 .base-modal {
-
     border-radius: 10px;
 }
 </style>

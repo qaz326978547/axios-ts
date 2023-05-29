@@ -21,7 +21,7 @@ const { open } = useModal({
         id: props.detail.id,
         content: props.detail.content,
         isCompleted: props.detail.isCompleted,
-        isLoading: loading.value
+
     },
     slots: {
         default: `

@@ -4,6 +4,7 @@
     <router-link to="/">home</router-link>
     <router-link to="/about" style="padding: 20px;">about</router-link>
     <router-link to="/test1">/test1</router-link>
+    <router-link to="/lang" style="padding: 20px;">lang</router-link>
   </div>
   <div style="padding: 0 10%;">
     <RouterView />

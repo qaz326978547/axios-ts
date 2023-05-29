@@ -1,8 +1,12 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["src/views/Home/*.ts","./**/*.ts","./axios/*.ts","env.d.ts","node_modules/axios/index.d.ts", "src/**/*", "src/**/*.vue","base/**/*.ts","base/**/*.vue","src/**/*.ts"],
+  "include": ["src/locales/*.ts","src/views/Home/*.ts","./**/*.ts","./axios/*.ts","env.d.ts","node_modules/axios/index.d.ts", "src/**/*", "src/**/*.vue","base/**/*.ts","base/**/*.vue","src/**/*.ts"],
   "exclude": ["src/**/__tests__/*", "node_modules"],
   "compilerOptions": {
+    "types": ["@intlify/unplugin-vue-i18n/messages"],
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "module": "esnext",
     "strict": true,
     "composite": true,
